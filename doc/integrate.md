@@ -9,7 +9,7 @@ This tutorial assumes the user has some familiarity with the Unity Editor. If co
 
 Other Prerequesites:
 - Unity Account
-- Unity version >= 2018.3.f1 (>= 2019.3 for [SRP](https://docs.unity3d.com/Manual/ScriptableRenderPipeline.html) support)
+- Unity version >= 2018.3 (>= 2019.3 for [SRP](https://docs.unity3d.com/Manual/ScriptableRenderPipeline.html) support)
 - Supported platforms: Windows10+ and 0SX (High-Sierra or newer)
 - Linux build support installed
 
@@ -19,7 +19,7 @@ Please refer to the [Requirements guide](requirements.md) for instructions on ho
 ## Create a new Unity project
 Open Unity Hub and create a new Unity project using the `3D` template with a project name that does not contain any spaces.
 
-**Note:** Ensure Display Resolution Dialog is Disabled in the `Resolution and Presentation` menu in [PlayerSettings](https://docs.unity3d.com/Manual/class-PlayerSettings.html). Player Settings can be found by navigating to `Edit` -> `Project Settings` -> and select `Player` in the left window panel.
+**Note:** For Unity versions prior to 2019.1, Ensure Display Resolution Dialog is Disabled in the `Resolution and Presentation` menu in [PlayerSettings](https://docs.unity3d.com/Manual/class-PlayerSettings.html). Player Settings can be found by navigating to `Edit` -> `Project Settings` -> and select `Player` in the left window panel.
 
 ![Build resolution dialog](images/sdk3.png "Build resolution dialog")
 
@@ -29,21 +29,20 @@ Set API Compatibility level to .NET 4.x as shown below.
 ![API compat](images/sdk1.png "API compat")
 
 ## Import SDK
-Download the [latest](https://github.com/Unity-Technologies/Unity-Simulation-Docs/releases) release of the Unity Simulation bundle and the Unity Simulation SDK under the `Assets` drop down at the bottom of each release.
 
->![unity_simulation_bundle](images/assets-sdk.png "unity_simulation_bundle")
+You can import the Unity Simulation Capture package, using the Package Manager in the editor. Select the Window menu, and choose Package Manager. This will open a window that allows you to install new packages.
 
-Import the SDK into your project from the menu bar by navigating to `Assets` -> `Import Package` -> `Custom Package` and selecting the downloaded SDK package.
+![add_package1](images/PackmanAdd1.png "add_package1")
 
-Alternatively, you can import the SDK by double clicking the `Simulation.unitypackage` and selecting `Import`.
+Click on the + icon, and choose Add package from git URL. Then in the text field, paste the following package name into the field.
 
-You might encounter the following error during an import. Click clear to see if this error is transient.
-```
-Unable to update following assemblies:Assets/DataExchange/Assemblies/Simulation.dll (Name = Simulation, Error = 131) (Output: /var/folders/ks/f3gbl2ld59j5748n3rx5qqp00000gp/T/tmpc84219a.tmp)
+*com.unity.simulation.capture@0.0.10-preview.6*
 
-System.InvalidOperationException: Operation is not valid due to the current state of the object.
-  at Mono.Cecil.ModuleDefinition.ReadSymbols (Mono.Cecil.Cil.ISymbolReader reader) [0x0002f] in <a3989f8c34e6476eaca56644d5639ee8>:0
-```
+![add_package2](images/PackmanAdd2.png "add_package2")
+
+And press the Add button to install the package. You should see a progress bar dialog show as the package is installed and compiled.
+
+Once installed, you can use the Package Manager to update to check for updates to the package.
 
 ## Screen Capture
 
